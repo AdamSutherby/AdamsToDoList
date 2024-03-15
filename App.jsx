@@ -15,12 +15,17 @@ function App() {
     'Walk dog',
   ]);
 
+  const addTask = task => {
+    if (task && !items.includes(task)) {
+      setTasks([...items, task]);
+    }
+
   return (
     <SafeAreaView>
       <ToDoList items={items} />
-      <ToDoForm />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }
-
+}
 export default App;
